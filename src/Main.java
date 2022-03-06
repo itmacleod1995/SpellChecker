@@ -6,13 +6,17 @@ public class Main {
 		
 		File file = new File("words.txt");
 		BufferedReader bf = null;
+		
+		//Binary Tree to store String objects
+		BinarySearchTree<String> tree = new BinarySearchTree<String>();
+		
 		try {
 			bf = new BufferedReader(new FileReader(file));
 			String line = bf.readLine();
 			while(line != null) {
-				System.out.println(line);
+				tree.insert(line);
 				line = bf.readLine();
-			}		
+			} 	
 		}catch(FileNotFoundException e) {
 			System.err.print("Error");
 		} catch (IOException e) {
