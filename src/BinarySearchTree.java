@@ -54,5 +54,16 @@ public class BinarySearchTree<T extends Comparable<T>> {
 			return rt;
 		}
 	}
+	
+	public int height() {
+		int height = findHeight(root);
+		return height;
+	}
+	
+	public int findHeight(Node rt) {
+		if(rt == null) return 0;
+		
+		return Math.max(findHeight(rt.left) + 1, findHeight(rt.right) + 1);
+	}
 
 }

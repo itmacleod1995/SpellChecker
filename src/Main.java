@@ -16,7 +16,9 @@ public class Main {
 			while(line != null) {
 				tree.insert(line);
 				line = bf.readLine();
-			} 	
+			} 
+			
+			System.out.println("Height is " + tree.height());
 		}catch(FileNotFoundException e) {
 			System.err.print("Error");
 		} catch (IOException e) {
