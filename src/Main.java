@@ -24,6 +24,9 @@ public class Main {
 			boolean go = true;
 			while(go) {
 				String words = scan.nextLine();
+				if(words.equals("end")) {
+					go = false;
+				}
 	
 				for(int i = 0; i < words.split(" ").length; i++) {
 					String wordToFind = tree.find(words.split(" ")[i]);
@@ -32,7 +35,7 @@ public class Main {
 					}
 				}
 				
-				go = false;
+				
 			}
 		}catch(FileNotFoundException e) {
 			System.err.print("Error");
