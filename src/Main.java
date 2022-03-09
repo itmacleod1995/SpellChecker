@@ -23,11 +23,15 @@ public class Main {
 			System.out.println("Height is " + tree.height());
 			boolean go = true;
 			while(go) {
-				String word = scan.next();
-				String x = tree.find(word);
-				if(x == null) {
-					System.out.println(word + " is spelled incorrectly");
+				String words = scan.nextLine();
+	
+				for(int i = 0; i < words.split(" ").length; i++) {
+					String wordToFind = tree.find(words.split(" ")[i]);
+					if(wordToFind == null) {
+						System.out.println(words.split(" ")[i] + " is not spelled correctly");
+					}
 				}
+				
 				go = false;
 			}
 		}catch(FileNotFoundException e) {
